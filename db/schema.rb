@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_21_195242) do
+ActiveRecord::Schema.define(version: 2018_12_21_195735) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,8 +41,8 @@ ActiveRecord::Schema.define(version: 2018_12_21_195242) do
     t.string "title"
     t.string "frequency"
     t.integer "amount_cents"
-    t.date "due_date"
-    t.date "end_date"
+    t.datetime "due_date"
+    t.datetime "end_date"
     t.bigint "category_id"
     t.bigint "bank_account_id"
     t.bigint "user_id"
