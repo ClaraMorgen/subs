@@ -18,7 +18,7 @@ RSpec.describe User, type: :model do
 		end
 	end
   context "Check validations" do 
-		[:subscriptions].each do |attribute|
+		[:subscriptions, :bank_accounts].each do |attribute|
 	  	it "should have many #{attribute}" do
 	   		is_expected.to have_many(attribute) 
 	   	end
