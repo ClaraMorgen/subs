@@ -1,5 +1,7 @@
 class Subscription < ApplicationRecord
-  belongs_to :category
-  belongs_to :bank_account
-  belongs_to :user
+  has_one :category
+  belongs_to :bank_account, dependent: :destroy
+  belongs_to :user, dependent: :destroy
+
+  validates :title, :amount, presence: true
 end
