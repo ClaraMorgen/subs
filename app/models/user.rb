@@ -6,6 +6,5 @@ class User < ApplicationRecord
 
   has_many :subscriptions
   has_many :bank_accounts
-  has_many :reminders
 
 end
