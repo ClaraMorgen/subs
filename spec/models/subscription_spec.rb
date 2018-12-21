@@ -6,8 +6,8 @@ RSpec.describe Subscription, type: :model do
     { title: :string,
       frequency: :string,
       amount_cents: :integer,
-      end_date: :date,
-      due_date: :date }.each do |attribute, type|
+      end_date: :datetime,
+      due_date: :datetime }.each do |attribute, type|
       it "should be created with a #{attribute}" do
         is_expected.to have_db_column(attribute).of_type type
       end
