@@ -22,11 +22,11 @@ puts "categories created"
 
 bank_accounts = BankAccount.create(
 	[
-		{name: 'Chase Bank'},
-		{name: 'N26'},
-		{name: 'Revolut'},
-		{name: 'ING Deutsch Bank'},
-		{name: 'PayPal'}
+		{user: u1, name: 'Chase Bank'},
+		{user: u2, name: 'N26'},
+		{user: u1, name: 'Revolut'},
+		{user: u2, name: 'ING Deutsch Bank'},
+		{user: u1, name: 'PayPal'}
 	]
 )
 puts "bank accounts created"

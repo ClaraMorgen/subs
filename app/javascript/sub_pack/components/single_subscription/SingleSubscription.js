@@ -8,6 +8,7 @@ const SingleSubscription = (props) =>  {
 				<h4>{props.title}</h4>
 				<p>frequency: {props.frequency}</p>
 				<p>{costEuros}</p>
+				<span>{props.bank}</span>
 			</div>
 		);
 }
