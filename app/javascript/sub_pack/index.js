@@ -9,7 +9,7 @@ import {logger} from 'redux-logger';
 import reduxPromise from 'redux-promise';
 
 // Internal
-import SubscriptionList from './components/subscription_list/SubscriptionList';
+import SubscriptionList from './containers/subscription_list/SubscriptionList';
 
 // Reducers
 import SubscriptionListReducer from './reducers/SubscriptionListReducer';
