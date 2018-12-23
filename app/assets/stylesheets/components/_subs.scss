@@ -1,7 +1,24 @@
+.subs-box {
+  display: flex;
+  font-size: 140px;
+  font-family: Staatliches;
+  color: #E5E5E5;
+}
+
 .more-letter-space {
   letter-spacing: 0.3em
 }
 
 .less-letter-space {
-  letter-spacing: 0.15em
+  letter-spacing: 0.15em;
+}
+
+.apostrophe {
+  transition: transform 0.2s cubic-bezier(0.25, 0.1, 0, 1.65);
+}
+
+.wiggle {
+  transform:rotate(-10deg);
+  -webkit-transform:rotate(-10deg);
+  -moz-transform:rotate(-10deg);
 }
