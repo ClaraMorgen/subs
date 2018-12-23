@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {fetchSubscriptions} from '../../actions';
+import SingleSubscription from '../../components/single_subscription/SingleSubscription';
+
 class SubscriptionList extends Component{
 		componentDidMount() {
 			this.props.fetchSubscriptions()
@@ -11,7 +13,18 @@ class SubscriptionList extends Component{
 			if(this.props.subscriptions.length > 0){
 				console.log(this.props.subscriptions);
 				subs = this.props.subscriptions.map( sub => {
-					return <div>{sub.title}</div>
+					return <SingleSubscription
+					 	key={sub.id}
+					 	id={sub.id}
+					 	frequency={sub.frequency}
+					 	title={sub.title}
+						amount={sub.amount_cents}
+						dueDate={sub.due_date}
+						endDate={sub.end_date}
+						category={sub.category_id}
+						bank={sub.bank_account_id}
+						user={sub.user_id}
+					 />
 				})
 		
 			}
