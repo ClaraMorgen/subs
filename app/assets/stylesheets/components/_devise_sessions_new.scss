@@ -3,6 +3,12 @@
   padding: 20px;
   margin-top: 30px;
   border-radius: 30px;
+  h1 {
+    text-align: right;
+  }
+  label, small {
+    margin-left: 5px;
+  }
 }
 
 .btn-login {
@@ -14,4 +20,5 @@
 .round-corners {
   border-radius: 30px;
   border: 1px $winter-wizard solid;
+
 }
