@@ -1,0 +1,24 @@
+.login-container {
+  background-color: $light-blue;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 30px;
+  h1 {
+    text-align: right;
+  }
+  label, small {
+    margin-left: 5px;
+  }
+}
+
+.btn-login {
+  background-color: $winter-wizard;
+  border-radius: 30px;
+  margin-bottom: 15px;
+}
+
+.round-corners {
+  border-radius: 30px;
+  border: 1px $winter-wizard solid;
+
+}
