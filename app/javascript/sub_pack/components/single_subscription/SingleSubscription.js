@@ -1,5 +1,6 @@
 import React from 'react';
 import './SingleSubscription.scss';
+
 const SingleSubscription = (props) =>  {
 		const euros = parseFloat(props.amount / 100).toFixed(2);
 		const costEuros =  `€${euros}`;
