@@ -6,7 +6,7 @@
     "node": "11.1.0"
   },
   "scripts": {
-    "webpack:deploy": "webpack --config=webpack/webpack.config.js -p",
+    "webpack:deploy": "webpack --config=webpack/production.js -p",
     "heroku-postbuild": "npm run webpack:deploy"
   },
   "dependencies": {
