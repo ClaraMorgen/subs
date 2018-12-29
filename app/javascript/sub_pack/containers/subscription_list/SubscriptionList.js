@@ -29,7 +29,7 @@ class SubscriptionList extends Component{
 
 			}
 			return (
-				<div>{subs}</div>
+				<div className="container">{subs}</div>
 				)
 		}
 }
