@@ -2,23 +2,32 @@
 	display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+  padding: 7px 100px 7px 40px;
   background-color: #F4F4F4;
   border-radius: 30px;
   border: 1px solid #A3D5FF;
-
-  padding-left: 50px;
   align-items: center;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: #e0dfdf;
+    .sub-title {
+      font-size: 2rem;
+      text-shadow: #A3D5FF 2px 3px 5px;
+    }
+  }
   .sub-title {
-    width: 40%;
+    width: 30%;
     flex-grow: 2;
     margin: 0px;
-
+    transition: all 0.3s ease;
   }
   .single-sub-item {
-    flex:0 1 20%;
+    flex:0 1 23%;
     p {
       margin-bottom: 0px !important;
     }
   }
-
+  .number-letter-spacing {
+    letter-spacing: 1.2px;
+  }
 }
