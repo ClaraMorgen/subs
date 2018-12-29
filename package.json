@@ -2,13 +2,6 @@
   "name": "subs",
   "private": true,
   "version": "1.0.0",
-  "engines": {
-    "node": "11.1.0"
-  },
-  "scripts": {
-    "webpack:deploy": "webpack --config=webpack/webpack.config.js -p",
-    "heroku-postbuild": "webpack -p"
-  },
   "dependencies": {
     "@rails/webpacker": "3.5",
     "babel-preset-react": "^6.24.1",
