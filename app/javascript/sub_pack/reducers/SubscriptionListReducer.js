@@ -1,4 +1,4 @@
-import {FETCH_SUBS} from '../actions';
+import { FETCH_SUBS } from '../actions';
 
 export default function SubscriptionListReducer(state = {}, action){
 	switch(action.type){

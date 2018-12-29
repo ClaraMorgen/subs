@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import {fetchSubscriptions} from '../../actions';
+import { fetchSubscriptions } from '../../actions';
 import SingleSubscription from '../../components/single_subscription/SingleSubscription';
 
 class SubscriptionList extends Component{
@@ -26,10 +26,10 @@ class SubscriptionList extends Component{
 						user={sub.user_id}
 					 />
 				})
-		
+
 			}
 			return (
-				<div>{subs}</div>
+				<div className="container">{subs}</div>
 				)
 		}
 }

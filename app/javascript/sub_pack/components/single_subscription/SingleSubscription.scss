@@ -1,3 +1,24 @@
-.single-sub{
+.single-sub {
 	display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  background-color: #F4F4F4;
+  border-radius: 30px;
+  border: 1px solid #A3D5FF;
+
+  padding-left: 50px;
+  align-items: center;
+  .sub-title {
+    width: 40%;
+    flex-grow: 2;
+    margin: 0px;
+
+  }
+  .single-sub-item {
+    flex:0 1 20%;
+    p {
+      margin-bottom: 0px !important;
+    }
+  }
+
 }
