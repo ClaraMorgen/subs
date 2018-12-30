@@ -8,8 +8,9 @@ import {logger} from 'redux-logger';
 import reduxPromise from 'redux-promise';
 
 // Internal
-// import './subscription.scss';
+import './subscription.scss';
 import SubscriptionList from './containers/subscription_list/SubscriptionList';
+import AddSubscription from './components/add_subscription/AddSubscription';
 
 // Reducers
 import SubscriptionListReducer from './reducers/SubscriptionListReducer';
@@ -26,6 +27,7 @@ const subscriptionWrap = document.querySelector('.subscription-wrapper');
 ReactDOM.render(
 	<Provider store={store}>
 		<SubscriptionList />
+		<AddSubscription />
 	</Provider>,
 	subscriptionWrap);
 
