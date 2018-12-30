@@ -12,7 +12,6 @@ class Subscription < ApplicationRecord
   	if BankAccount.find_by(name: bank_name)
   		bank = BankAccount.find_by(name: bank_name)
   	else
-  		binding.pry
   		bank = BankAccount.create(name: bank_name, user: user)
   	end
   	bank
