@@ -28,6 +28,7 @@ const subscriptionWrap = document.querySelector('.subscription-wrapper');
 ReactDOM.render(
 	<Provider store={store}>
 		<SubscriptionList />
+
     <AddSubscription />
 		<SubscriptionDetails />
 	</Provider>,
