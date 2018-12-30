@@ -10,4 +10,28 @@ class Api::V1::SubscriptionsController < ActionController::Base
     end
 		render json: @subscriptions
 	end
+
+  def create
+    @subscription = Subscription.new(subscription_params)
+    @subscription.title = params[:subscription][:title]
+    @subscription.amount_cents = params[:subscription][:amountCents]
+    @subscription.user = current_user
+    @subscription.frequency = params[:subscription][:frequency]
+    @subscription.end_date = params[:subscription][:endDate]
+    @subscription.due_date = params[:subscription][:dueDate]
+      @subscription.category = Category.new(name: params[:subscription][:category])
+    @subscription.bank_account = BankAccount.new(name: params[:subscription][:bankAccount], user: current_user)
+
+
+    puts @subscription
+    @subscription.save!
+    render json: @subscription
+  end
+
+  private
+
+  def subscription_params
+    params.require(:subscription).permit("values")
+  end
+
 end

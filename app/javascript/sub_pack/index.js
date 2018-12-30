@@ -13,10 +13,10 @@ import SubscriptionList from './containers/subscription_list/SubscriptionList';
 import AddSubscription from './components/add_subscription/AddSubscription';
 
 // Reducers
-import SubscriptionListReducer from './reducers/SubscriptionListReducer';
+import SubscriptionsReducer from './reducers/SubscriptionsReducer';
 
 const reducers = combineReducers({
-	subscriptions: SubscriptionListReducer
+	subscriptions: SubscriptionsReducer
 })
 // MiddleWare
 const middlewares = applyMiddleware(reduxPromise,logger);
