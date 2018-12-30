@@ -7,5 +7,13 @@ class Subscription < ApplicationRecord
 
   validates :title, :amount_cents, presence: true
 
-  private
+
+  def check_bank_account(bank_name, user)
+  	if BankAccount.find_by(name: bank_name)
+  		bank = BankAccount.find_by(name: bank_name)
+  	else
+  		bank = BankAccount.create(name: bank_name, user: user)
+  	end
+  	bank
+  end
 end

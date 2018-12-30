@@ -15,29 +15,33 @@ class AddSubscriptionForm extends Component {
     	<h1>Create Form</h1>
     	<Formik
       	initialValues={{ title: '',
-      									 frequency: '',
-      									 amountCents: '',
-      									 dueDate: '',
-      									 endDate: '',
+      									 frequency: '', 
+      									 amount_cents: '',
+      									 due_date: '',
+      									 end_date: '',
       									 category: '',
-      									 bankAccount: '',
-      									 user_id: 1,
+      									 bank_account: '',
 
       								}}
       	onSubmit={(subscription, { setSubmitting }) => {
-        setSubmitting(false)
-       	this.props.AddSubscription(subscription)
+          setSubmitting(true)
+        setTimeout(() => {
+          this.props.AddSubscription(subscription)
+          setSubmitting(false)
+        }, 3000);
       }}
       validationSchema={Yup.object().shape({
          title: Yup.string().required('Please enter a name'),
          frequency: Yup.mixed()
          		.required()
          		.oneOf(['Monthly', 'Yearly','Weekly'], 'Please enter'),
-					amountCents: Yup.number().integer().required('pease enter amount'),
-					dueDate: Yup.date().required('Pleae enter due date'),
-					endDate: Yup.date().required('please enter end date'),
+					amount_cents: Yup.number().integer().required('pease enter amount'),
+					due_date: Yup.date().min(new Date(), 'please enter a valid date')
+            .required('Pleae enter due date'),
+					end_date: Yup.date().min(new Date(), 'please enter a valid date')
+            .required('please enter end date'),
 					category: Yup.string().required('select field'),
-					bankAccount: Yup.string().required()
+					bank_account: Yup.string().required()
       })}
       >
     {({ errors, status, touched, isSubmitting }) => (
@@ -56,26 +60,26 @@ class AddSubscriptionForm extends Component {
           {errors.frequency && touched.frequency ? (
             <div>{errors.frequency}</div>
           ) : null}
-          <label htmlFor="amountCents" style={{ display: "block" }}>
+          <label htmlFor="amount_cents" style={{ display: "block" }}>
              Amount
           </label>
-          <Field name="amountCents" type="integer" />
-          {errors.amountCents && touched.amountCents ? <div>{errors.amountCents}</div> : null}
-          <label htmlFor="dueDate" style={{ display: "block" }}>
+          <Field name="amount_cents" type="integer" />
+          {errors.amount_cents && touched.amount_cents ? <div>{errors.amount_cents}</div> : null}
+          <label htmlFor="due_date" style={{ display: "block" }}>
              Due Date
           </label>
-          <Field name="dueDate" type="date" />
-          {errors.dueDate && touched.dueDate ? <div>{errors.dueDate}</div> : null}
-          <label htmlFor="endDate" style={{ display: "block" }}>
+          <Field name="due_date" type="date" />
+          {errors.due_date && touched.due_date ? <div>{errors.due_date}</div> : null}
+          <label htmlFor="end_date" style={{ display: "block" }}>
              End Date
           </label>
-          <Field name="endDate" type="date" />
-          {errors.endDate && touched.endDate ? <div>{errors.endDate}</div> : null}
-          <label htmlFor="bankAccount" style={{ display: "block" }}>
+          <Field name="end_date" type="date" />
+          {errors.end_date && touched.end_date ? <div>{errors.end_date}</div> : null}
+          <label htmlFor="bank_account" style={{ display: "block" }}>
              Bank Account
           </label>
-          <Field name="bankAccount" type="string" />
-          {errors.bankAccount && touched.bankAccount ? <div>{errors.bankAccount}</div> : null}
+          <Field name="bank_account" type="string" />
+          {errors.bank_account && touched.bank_account ? <div>{errors.bank_account}</div> : null}
           <label htmlFor="category" style={{ display: "block" }}>
              Category
           </label>
