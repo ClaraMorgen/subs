@@ -1,0 +1,14 @@
+<div class="subscriptions">
+  <% @subscriptions.each do |sub| %>
+    <%= link_to subscription_path(sub.id) do %>
+    <div class="single-sub ">
+      <h4 class="sub-title"><%= sub.title %> </h4>
+      <div class="single-sub-item">Category</div>
+      <div class="single-sub-item number-letter-spacing"><%= sub.end_date %></div>
+      <div class="single-sub-item number-letter-spacing text-right"><%= sub.amount_cents %></div>
+    </div>
+    <% end %>
+  <% end %>
+</div>
+
+
