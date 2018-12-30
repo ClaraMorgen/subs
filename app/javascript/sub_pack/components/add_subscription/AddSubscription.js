@@ -15,7 +15,7 @@ class AddSubscriptionForm extends Component {
     	<h1>Create Form</h1>
     	<Formik
       	initialValues={{ title: '',
-      									 frequency: '', 
+      									 frequency: '',
       									 amountCents: '',
       									 dueDate: '',
       									 endDate: '',
