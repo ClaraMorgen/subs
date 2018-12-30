@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { Component} from 'react';
 import './AddSubscription.scss';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { AddSubscription, fetchSubscriptions} from '../../actions/index';
 import * as Yup from 'yup';
 
 
-const AddSubscription = (props) => {
+class AddSubscriptionForm extends Component {
+  render(){
+
   return (
     <div>
     	<h1>Create Form</h1>
@@ -15,13 +20,13 @@ const AddSubscription = (props) => {
       									 dueDate: '',
       									 endDate: '',
       									 category: '',
-      									 bankAccount: ''
+      									 bankAccount: '',
+      									 user_id: 1,
+
       								}}
-      	onSubmit={(values, { setSubmitting }) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          setSubmitting(false);
-        }, 400);
+      	onSubmit={(subscription, { setSubmitting }) => {
+        setSubmitting(false)
+       	this.props.AddSubscription(subscription)
       }}
       validationSchema={Yup.object().shape({
          title: Yup.string().required('Please enter a name'),
@@ -80,12 +85,19 @@ const AddSubscription = (props) => {
             <option value="phone">Phone</option>
           </Field>
           {errors.category && touched.category ? <div>{errors.category}</div> : null}
-          <button type="submit" disabled={isSubmitting}>Submit</button>
+          <button type="submit" disabled={isSubmitting}>
+          	{isSubmitting ? 'Submitting...' : 'Submit'}
+					</button>
           </Form>
       )}
 		</Formik>
    </div>
   )
 }
+}
 
-export default AddSubscription;
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ AddSubscription, fetchSubscriptions }, dispatch);
+}
+
+export default connect(null, mapDispatchToProps)(AddSubscriptionForm);

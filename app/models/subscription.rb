@@ -6,4 +6,6 @@ class Subscription < ApplicationRecord
   belongs_to :user, dependent: :destroy
 
   validates :title, :amount_cents, presence: true
+
+  private
 end
