@@ -11,7 +11,6 @@ class SubscriptionList extends Component{
       activeSubscription: ""
     }
   };
-
   componentDidMount() {
     this.props.fetchSubscriptions()
   };
