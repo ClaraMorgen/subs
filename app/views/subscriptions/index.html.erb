@@ -1,3 +1,14 @@
+<div class="new-sub-section">
+  <%= link_to "Add new sub!", new_subscription_path(@subscription), class: "new-sub-button" %>
+</div>
+
+<div>
+  <h1>
+  Filterbar
+  </h1>
+</div>
+
+
 <div class="subscriptions">
   <% @subscriptions.each do |sub| %>
     <%= link_to subscription_path(sub.id) do %>
@@ -10,5 +21,6 @@
     <% end %>
   <% end %>
 </div>
+
 
 

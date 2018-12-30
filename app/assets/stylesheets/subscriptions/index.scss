@@ -1,3 +1,19 @@
+.new-sub-section {
+  text-align: right;
+  padding: 5px 50px;
+  .new-sub-button {
+    color: $off-white;
+    background-color: $winter-wizard;
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 30px;
+    &:hover {
+      text-decoration: none;
+      background-color: #77BFFC;
+    }
+  }
+}
+
 .subscriptions {
   padding: 0px 50px;
   a {
