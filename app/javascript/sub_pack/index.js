@@ -11,6 +11,7 @@ import reduxPromise from 'redux-promise';
 // import './subscription.scss';
 import SubscriptionList from './containers/subscription_list/SubscriptionList';
 import AddSubscription from './components/add_subscription/AddSubscription';
+import SubscriptionDetails from './containers/subscription_details/SubscriptionDetails';
 
 // Reducers
 import SubscriptionsReducer from './reducers/SubscriptionsReducer';
@@ -27,7 +28,8 @@ const subscriptionWrap = document.querySelector('.subscription-wrapper');
 ReactDOM.render(
 	<Provider store={store}>
 		<SubscriptionList />
-		<AddSubscription />
+    <AddSubscription />
+		<SubscriptionDetails />
 	</Provider>,
 	subscriptionWrap);
 

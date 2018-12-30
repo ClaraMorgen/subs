@@ -11,7 +11,6 @@ class SubscriptionList extends Component{
 		render(){
 			let subs;
 			if(this.props.subscriptions.length > 0){
-				console.log(this.props.subscriptions);
 				subs = this.props.subscriptions.map( sub => {
 					return <SingleSubscription
 					 	key={sub.id}
@@ -34,7 +33,6 @@ class SubscriptionList extends Component{
 		}
 }
 function mapStateToProps(state){
-	console.log(state.subscriptions.subscriptions)
 	return({subscriptions: state.subscriptions})
 }
 function mapDispatchToProps(dispatch){
