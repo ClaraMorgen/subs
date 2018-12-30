@@ -7,6 +7,7 @@ class Subscription < ApplicationRecord
 
   validates :title, :amount_cents, presence: true
 
+  monetize :amount_cents
 
   def check_bank_account(bank_name, user)
   	if BankAccount.find_by(name: bank_name)
