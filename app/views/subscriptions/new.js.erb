@@ -1,0 +1,6 @@
+const newSubsContainer = document.getElementById('new-subs');
+newSubsContainer.style.flex = "0 1 30%"
+
+const subsList = document.getElementById('subs-list');
+subsList.style.flex = "0 1 70%"
+newSubsContainer.innerHTML = '<%= j render "subscriptions/form", subscription: @subscription %>'
