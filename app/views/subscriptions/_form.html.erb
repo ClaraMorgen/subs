@@ -9,11 +9,11 @@
   <%= f.input :end_date, wrapper_html: {class: "col"} %>
   </div>
   <div class="row">
-  <%= f.input :category_id, wrapper_html: {class: "col"} %>
-  <%= f.input :bank_account_id, wrapper_html: {class: "col"} %>
+  <%= f.input :category_id, wrapper_html: {class: "col"}, input_html: { class: "input-field" }, placeholder: "Category", label: false %>
+  <%= f.input :bank_account_id, wrapper_html: {class: "col"}, input_html: { class: "input-field" }, placeholder: "Bank Account", label: false %>
   </div>
   <div class="row">
-  <%= f.input :amount_cents, wrapper_html: {class: "col"} %>
+  <%= f.input :amount_cents, wrapper_html: {class: "col"}, input_html: { class: "input-field" }, placeholder: "Price", label: false %>
   </div>
   <div class="row">
   <%= f.button :submit, class: "new-sub-form-button" %>
