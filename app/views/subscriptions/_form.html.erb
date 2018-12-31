@@ -1,8 +1,22 @@
+<div class="form-new">
+
 <%= simple_form_for(@subscription) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :amount_cents %>
-  <%= f.input :due_date %>
-  <%= f.input :end_date %>
-  <%= f.input :category_id %>
-  <%= f.button :submit %>
+  <div class="row">
+  <%= f.input :title, wrapper_html: {class: "col"}, input_html: { class: "input-field" }, placeholder: "Title", label: false %>
+  </div>
+  <div class="row">
+  <%= f.input :due_date, wrapper_html: {class: "col"} %>
+  <%= f.input :end_date, wrapper_html: {class: "col"} %>
+  </div>
+  <div class="row">
+  <%= f.input :category_id, wrapper_html: {class: "col"} %>
+  <%= f.input :bank_account_id, wrapper_html: {class: "col"} %>
+  </div>
+  <div class="row">
+  <%= f.input :amount_cents, wrapper_html: {class: "col"} %>
+  </div>
+  <div class="row">
+  <%= f.button :submit, class: "new-sub-form-button" %>
+  </div>
 <% end %>
+</div>
