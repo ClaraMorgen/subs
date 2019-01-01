@@ -13,8 +13,34 @@
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
+@import "subscriptions/index";
+@import "subscriptions/form";
 
 body {
   color: $black;
-  background-color: white;
+  background: rgb(255,255,255);
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(217,240,255,1) 57%);
+  height: 100%;
+  width: 100vw;
+  margin: 0;
+}
+html, body {
+}
+.wrapper {
+  min-height: 100%;
+  width: 100vw;
+  // padding: 20px 20px 0 20px;
+
+  /* Equal to height of footer */
+  /* But also accounting for potential margin-bottom of last child */
+  margin-bottom: -60px;
+}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 50px;
+}
+.footer,
+.push {
+  height: 60px;
 }

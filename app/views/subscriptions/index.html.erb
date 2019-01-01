@@ -1,0 +1,31 @@
+<div class="new-sub-section">
+  <%= link_to "Add new sub!", new_subscription_path(@subscription), remote: true, class: "new-sub-button", id: "new-sub-button" %>
+</div>
+
+<div class="filterbar">
+  <h1>
+  Filterbar
+  </h1>
+</div>
+
+<div class="subs-part">
+
+  <div class="subscriptions" id="subs-list">
+    <% @subscriptions.each do |sub| %>
+      <%= link_to subscription_path(sub.id) do %>
+      <div class="single-sub ">
+        <h4 class="sub-title"><%= sub.title %> </h4>
+        <div class="single-sub-item">Category</div>
+        <div class="single-sub-item number-letter-spacing"><%= sub.end_date.strftime("%e/%m/%Y") %></div>
+        <div class="single-sub-item number-letter-spacing text-right"><%= humanized_money_with_symbol(sub.amount) %></div>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+
+
+
+  <div id="new-subs">
+
+  </div>
+</div>
