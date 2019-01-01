@@ -1,0 +1,15 @@
+.footer {
+  background-color: $off-white;
+  color: $winter-wizard;
+  padding: 20px 70px;
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  a {
+    text-decoration: underline;
+  }
+  .staatliches-font {
+    color: $black;
+  }
+}

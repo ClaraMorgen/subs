@@ -2,14 +2,14 @@
   text-align: right;
   padding: 5px 50px;
   .new-sub-button {
+    background-color: #77BFFC;
     color: $off-white;
-    background-color: $winter-wizard;
     font-weight: bold;
     padding: 10px 25px;
     border-radius: 30px;
     &:hover {
       text-decoration: none;
-      background-color: #77BFFC;
+      background-color: $winter-wizard;
     }
   }
 }
@@ -20,14 +20,14 @@
 
 .subs-part {
   display: flex;
-  width: 100vw;
+  // width: 100vw;
   .new-subs {
     flex: 0 0 0%;
     transition: all 0.5s ease;
   }
   .subscriptions {
     flex:1 1 100%;
-    padding-left: 50px;
+    padding: 0 50px;
     transition: all 0.5s ease;
     a {
       color: $black;
