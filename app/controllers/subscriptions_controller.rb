@@ -1,6 +1,10 @@
 class SubscriptionsController < ApplicationController
 	def index
 		@subscriptions = Subscription.all
+    respond_to do |format|
+      format.html
+      format.js  # <-- will render `app/views/subscription/new.js.erb`
+    end
   end
 
   def show

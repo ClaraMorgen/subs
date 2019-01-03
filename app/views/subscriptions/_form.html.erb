@@ -1,16 +1,18 @@
 <div class="form-new">
 
-  <%# link_to subscriptions_path, remote: true, id: "close-button", class: "text-left" do %>
+  <%= link_to "#", remote: true, id: "close-button", class: "text-left" do %>
     <i class="fas fa-times-circle", id="close-button"></i>
-  <%# end %>
+  <% end %>
 
 <%= simple_form_for(@subscription) do |f| %>
   <div class="row">
   <%= f.input :title, wrapper_html: {class: "col"}, input_html: { class: "input-field" }, placeholder: "Title", label: false %>
   </div>
   <div class="row">
-  <%= f.input :due_date, wrapper_html: {class: "col"} %>
-  <%= f.input :end_date, wrapper_html: {class: "col"} %>
+  <%= f.input :due_date, wrapper_html: { class: "col" }, input_html: { class: "input-field" }, label_html: { class: "label-staatliches" } %>
+  </div>
+  <div class="row">
+  <%= f.input :end_date, wrapper_html: { class: "col" }, input_html: { class: "input-field" }, label_html: { class: "label-staatliches" } %>
   </div>
   <div class="row">
   <%= f.input :category_id, wrapper_html: {class: "col"}, input_html: { class: "input-field" }, placeholder: "Category", label: false %>
@@ -24,3 +26,8 @@
   </div>
 <% end %>
 </div>
+
+
+<%= content_for(:after_js) do %>
+<% javascript_pack_tag 'close_form' %>
+<% end %>
