@@ -22,9 +22,13 @@ class SubscriptionsController < ApplicationController
   def create
     @subscription = Subscription.new(subscription_params)
     @subscription.user = current_user
-    @subscription.save
-    flash[:notice] = "You have successfully created a subscription."
-    redirect_to root_path
+    if @subscription.save
+      flash[:notice] = "You have successfully created a subscription."
+      redirect_to root_path
+    else
+      flash[:alert] = "Something went wrong"
+      redirect_to new_subscription_path
+    end
   end
 
   private
