@@ -1,3 +1,5 @@
+
+
 function formToggle(){
 
   const formContainer = document.getElementById('new-subs');
@@ -9,7 +11,6 @@ function formToggle(){
   buttonContainer.style.transform =  `translateX(400px)`;
   formContainer.style.transform =  `translateX(0)`;
   formContainer.innerHTML = '<%= j render "subscriptions/form", subscription: @subscription %>';
-
   //  First I append the form..
   // Second I listen on the close button once form is displayed
   const closeButton = document.getElementById('close-button');
