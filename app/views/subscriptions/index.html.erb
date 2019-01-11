@@ -1,15 +1,11 @@
-<div class="top">
-  <div class="inner-top">
-    <div class="filterbar">
-      <h1>
-      Filterbar
-      </h1>
-    </div>
+<div class="top-index">
+  <div class="filterbar">
+    <h1>
+    Filterbar
+    </h1>
   </div>
-  <div class="inner-top">
-    <div class="new-sub-section">
-      <%= link_to "Add new sub!", new_subscription_path(@subscription), remote: true, class: "new-sub-button", id: "new-sub-button" %>
-    </div>
+  <div class="new-sub-section">
+    <%= link_to "Add new sub!", new_subscription_path(@subscription), remote: true, class: "new-sub-button", id: "new-sub-button" %>
   </div>
 </div>
 
@@ -35,10 +31,3 @@
   </div>
 </div>
 
-
-<style>
-  .top{
-    display: flex;
-    justify-content: space-between;
-  }
-</style>
