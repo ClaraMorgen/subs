@@ -19,13 +19,35 @@
     display: flex;
     justify-content: space-between;
 }
+#total-wrapper{
+  position: sticky;
+  background: $off-white;
+  left: 890px;
+  bottom: 10px;
+  height: 180px;
+  width: 270px;
+  border-radius : 25px;
+  box-shadow: -1px -1px 5px $winter-wizard;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  .total-upper{
+    display: flex;
+    justify-content: space-between;
+  }
+  .total-lower{
+    display: flex;
+    justify-content: flex-end;
+  }
+
+}
 
 .filterbar {
   padding: 5px 50px;
 }
 
 .subs-part {
-  min-height: 60vh;
   display: flex;
   margin-bottom: 10vh;
   #new-subs {
@@ -35,6 +57,7 @@
   }
 
   .subscriptions {
+    position: relative;
     flex:0 0 100%;
     padding: 0 50px;
     transition: all 0.5s ease;
