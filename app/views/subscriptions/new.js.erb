@@ -2,11 +2,12 @@ function formToggle(){
 
   const formContainer = document.getElementById('new-subs');
   const subsList = document.getElementById('subs-list');
-
-  formContainer.style.flex = "0 1 30%";
+  const newSubButton = document.querySelector('.new-sub-button');
+  const buttonContainer = document.querySelector('.new-sub-section');
   subsList.style.flex = "0 1 70%";
-
-
+  newSubButton.style.opacity = 0;
+  buttonContainer.style.transform =  `translateX(400px)`;
+  formContainer.style.transform =  `translateX(0)`;
   formContainer.innerHTML = '<%= j render "subscriptions/form", subscription: @subscription %>';
 
   //  First I append the form..
@@ -17,10 +18,12 @@ function formToggle(){
   function handleClick(){
     if(formContainer.innerHTML !== "") {
      formContainer.innerHTML = "";
-     formContainer.style.flex = "0 0 0";
-     subsList.style.flex = "1 1 100%";
+    buttonContainer.style.transform =  `translateX(0)`;
+     subsList.style.flex = "0 0 100%";
+     newSubButton.style.opacity = 1;
+    formContainer.style.transform =  `translateX(0)`;
+     // formsContainer.classList.remove('new-subs-active')
     }
   }
-
 }
 formToggle();

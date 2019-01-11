@@ -1,7 +1,9 @@
 .new-sub-section {
   text-align: right;
   padding: 5px 50px;
+    transition: all 0.8s ease;
   .new-sub-button {
+    transition: all 0.05s ease;
     background-color: #77BFFC;
     color: $off-white;
     font-weight: bold;
@@ -19,14 +21,17 @@
 }
 
 .subs-part {
+  min-height: 60vh;
   display: flex;
-  // width: 100vw;
-  .new-subs {
-    flex: 0 0 0%;
-    transition: all 0.5s ease;
+  margin-bottom: 10vh;
+  #new-subs {
+    margin-top: -60px;
+    transition: all 1s ease;
+    transform:translateX(400px);
   }
+
   .subscriptions {
-    flex:1 1 100%;
+    flex:0 0 100%;
     padding: 0 50px;
     transition: all 0.5s ease;
     a {
