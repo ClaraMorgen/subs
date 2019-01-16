@@ -1,10 +1,30 @@
-let newSubsContainer = document.getElementById('new-subs');
-newSubsContainer.style.flex = "0 1 30%";
 
-// const newSubButton = document.getElementById('new-sub-button');
-// newSubButton.style.display = none;
 
-const subsList = document.getElementById('subs-list');
-subsList.style.flex = "0 1 70%";
+function formToggle(){
 
-newSubsContainer.innerHTML = '<%= j render "subscriptions/form", subscription: @subscription %>';
+  const formContainer = document.getElementById('new-subs');
+  const subsList = document.getElementById('subs-list');
+  const newSubButton = document.querySelector('.new-sub-button');
+  const buttonContainer = document.querySelector('.new-sub-section');
+  subsList.style.flex = "0 1 70%";
+  newSubButton.style.opacity = 0;
+  buttonContainer.style.transform =  `translateX(400px)`;
+  formContainer.style.transform =  `translateX(0)`;
+  formContainer.innerHTML = '<%= j render "subscriptions/form", subscription: @subscription %>';
+  //  First I append the form..
+  // Second I listen on the close button once form is displayed
+  const closeButton = document.getElementById('close-button');
+  closeButton.addEventListener('click', handleClick)
+
+  function handleClick(){
+    if(formContainer.innerHTML !== "") {
+     formContainer.innerHTML = "";
+    buttonContainer.style.transform =  `translateX(0)`;
+     subsList.style.flex = "0 0 100%";
+     newSubButton.style.opacity = 1;
+    formContainer.style.transform =  `translateX(0)`;
+     // formsContainer.classList.remove('new-subs-active')
+    }
+  }
+}
+formToggle();

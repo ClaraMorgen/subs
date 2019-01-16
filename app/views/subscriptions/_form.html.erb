@@ -9,10 +9,10 @@
   <%= f.input :title, wrapper_html: {class: "col"}, input_html: { class: "input-field" }, placeholder: "Title", label: false %>
   </div>
   <div class="row">
-  <%= f.input :due_date, wrapper_html: { class: "col" }, input_html: { class: "input-field" }, label_html: { class: "label-staatliches" } %>
+  <%= f.input :due_date, as: :string, wrapper_html: { class: "col" }, input_html: { class: "input-field datepicker" }, label_html: { class: "label-staatliches" } %>
   </div>
   <div class="row">
-  <%= f.input :end_date, wrapper_html: { class: "col" }, input_html: { class: "input-field" }, label_html: { class: "label-staatliches" } %>
+  <%= f.input :end_date, as: :string, wrapper_html: { class: "col" }, input_html: { class: "input-field datepicker" }, label_html: { class: "label-staatliches" } %>
   </div>
   <div class="row">
   <%= f.input :category_id, wrapper_html: {class: "col"}, input_html: { class: "input-field" }, placeholder: "Category", label: false %>
@@ -26,8 +26,7 @@
   </div>
 <% end %>
 </div>
-
-
-<%= content_for(:after_js) do %>
-<% javascript_pack_tag 'close_form' %>
-<% end %>
+<script>
+// console.log('hello')
+flatpickr(".datepicker", {});
+</script>

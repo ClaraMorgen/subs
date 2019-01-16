@@ -1,12 +1,14 @@
-<div class="new-sub-section">
-  <%= link_to "Add new sub!", new_subscription_path(@subscription), remote: true, class: "new-sub-button", id: "new-sub-button" %>
+<div class="top-index">
+  <div class="filterbar">
+    <h1>
+    Filterbar
+    </h1>
+  </div>
+  <div class="new-sub-section">
+    <%= link_to "Add new sub!", new_subscription_path(@subscription), remote: true, class: "new-sub-button", id: "new-sub-button" %>
+  </div>
 </div>
 
-<div class="filterbar">
-  <h1>
-  Filterbar
-  </h1>
-</div>
 
 <div class="subs-part">
 
@@ -21,13 +23,18 @@
       </div>
       <% end %>
     <% end %>
+    <div id="total-wrapper">
+      <div class="total-upper">
+        <h1 class="total-title">Total</h1>
+        <h1 class="total-amount">€50</h1>
+      </div>
+      <div class="total-lower">
+        <h2 class="total-subs-counter">7 Subs</h2>
+      </div>
+    </div>
   </div>
 
 
-
-  <div id="new-subs">
-
-  </div>
+  <div id="new-subs"></div>
 </div>
-
 
