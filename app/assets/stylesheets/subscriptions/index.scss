@@ -1,3 +1,8 @@
+
+@import "subscriptions/form";
+@import "subscriptions/show";
+
+
 .new-sub-section {
   text-align: right;
   padding: 5px 50px;
@@ -50,17 +55,11 @@
 .subs-part {
   display: flex;
   margin-bottom: 10vh;
-  #new-subs {
-    margin-top: -60px;
-    transition: all 1s ease;
-    transform:translateX(400px);
-  }
-
-  .subscriptions {
+    .subscriptions {
     position: relative;
     flex:0 0 100%;
     padding: 0 50px;
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
     a {
       color: $black;
       text-decoration: none;
@@ -101,6 +100,15 @@
       }
     }
   }
+}
+.form-new, .single-sub-show {
+  transition: all 0.3s ease;
+  background-color: $off-white;
+  border-radius: 30px 0 0 30px;
+  border: 1px solid $winter-wizard;
+  box-shadow: #c3c3c3 2px 2px 4px;
+  padding: 20px 80px 20px 20px;
+  margin: 0 0 30px 30px;
 }
 // .active {
 //   background-color: #A3D5FF;

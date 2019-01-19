@@ -9,6 +9,10 @@ class SubscriptionsController < ApplicationController
 
   def show
     @subscription = Subscription.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.js # <-- will render '../subscriptions/show.js.erb'
+    end
   end
 
   def new

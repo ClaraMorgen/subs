@@ -14,7 +14,7 @@
 
   <div class="subscriptions" id="subs-list">
     <% @subscriptions.each do |sub| %>
-      <%= link_to subscription_path(sub.id) do %>
+      <%= link_to subscription_path(sub.id), remote: true do %>
       <div class="single-sub ">
         <h4 class="sub-title"><%= sub.title %> </h4>
         <div class="single-sub-item">Category</div>
@@ -35,6 +35,6 @@
   </div>
 
 
-  <div id="new-subs"></div>
+  <div id="new-subs" class="single-sub-container"></div>
 </div>
 
