@@ -1,6 +1,7 @@
 class SubscriptionsController < ApplicationController
 	def index
 		@subscriptions = Subscription.all
+    @total = @subscriptions.sum(&:amount)
     respond_to do |format|
       format.html
       format.js  # <-- will render `app/views/subscription/new.js.erb`

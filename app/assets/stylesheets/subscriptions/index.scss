@@ -22,12 +22,13 @@
 #total-wrapper{
   position: sticky;
   background: $off-white;
-  left: 890px;
+  left: 950px;
   bottom: 10px;
-  height: 180px;
-  width: 270px;
-  border-radius : 25px;
-  box-shadow: -1px -1px 5px $winter-wizard;
+  height: 112px;
+  width: 229px;
+  border-radius: 30px;
+  border: 1px solid $winter-wizard;
+  // box-shadow: -1px -1px 5px $winter-wizard;
   padding: 10px 20px;
   display: flex;
   flex-direction: column;
