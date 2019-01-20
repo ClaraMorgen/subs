@@ -1,6 +1,6 @@
 class SubscriptionsController < ApplicationController
 	def index
-		@subscriptions = Subscription.all
+		@subscriptions = policy_scope(Subscription)
     @total = @subscriptions.sum(&:amount)
     respond_to do |format|
       format.html
@@ -10,6 +10,7 @@ class SubscriptionsController < ApplicationController
 
   def show
     @subscription = Subscription.find(params[:id])
+    authorize @subscription
     respond_to do |format|
       format.html
       format.js # <-- will render '../subscriptions/show.js.erb'
@@ -18,6 +19,7 @@ class SubscriptionsController < ApplicationController
 
   def new
     @subscription = Subscription.new
+    authorize @subscription
     respond_to do |format|
       format.html { redirect_to subscriptions_path }
       format.js  # <-- will render `app/views/subscription/new.js.erb`
@@ -27,6 +29,7 @@ class SubscriptionsController < ApplicationController
   def create
     @subscription = Subscription.new(subscription_params)
     @subscription.user = current_user
+    authorize @subscription
     if @subscription.save
       flash[:notice] = "You have successfully created a subscription."
       redirect_to root_path
