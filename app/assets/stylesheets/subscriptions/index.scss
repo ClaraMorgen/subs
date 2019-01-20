@@ -8,6 +8,7 @@
   padding: 5px 50px;
     transition: all 0.8s ease;
   .new-sub-button {
+    height: inherit;
     transition: all 0.05s ease;
     background-color: #77BFFC;
     color: $off-white;
@@ -21,6 +22,7 @@
   }
 }
 .top-index{
+    width: 100vw;
     display: flex;
     justify-content: space-between;
 }
@@ -54,12 +56,9 @@
 }
 
 .subs-part {
-  height: calc(100vh -275px);
   display: flex;
   margin-bottom: 10vh;
     .subscriptions {
-    overflow: auto;
-    height: inherit;
     position: relative;
     flex:0 0 100%;
     padding: 0 50px;
