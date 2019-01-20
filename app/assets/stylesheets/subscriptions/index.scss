@@ -28,7 +28,7 @@
   position: sticky;
   background: $off-white;
   left: 950px;
-  bottom: 10px;
+  bottom: 45px;
   height: 112px;
   width: 229px;
   border-radius: 30px;
@@ -54,9 +54,12 @@
 }
 
 .subs-part {
+  height: calc(100vh -275px);
   display: flex;
   margin-bottom: 10vh;
     .subscriptions {
+    overflow: auto;
+    height: inherit;
     position: relative;
     flex:0 0 100%;
     padding: 0 50px;
