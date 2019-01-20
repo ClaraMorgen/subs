@@ -42,6 +42,6 @@ class SubscriptionsController < ApplicationController
   private
 
   def subscription_params
-    params.require(:subscription).permit(:title, :due_date, :end_date, :amount_cents, :category_id, :bank_account_id)
+    params.require(:subscription).permit(:title, :due_date, :end_date, :amount_cents, :category_id, :bank_account_id, :frequency)
   end
 end

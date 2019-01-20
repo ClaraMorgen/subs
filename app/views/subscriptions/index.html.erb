@@ -17,7 +17,7 @@
       <%= link_to subscription_path(sub.id), remote: true do %>
       <div class="single-sub ">
         <h4 class="sub-title"><%= sub.title %> </h4>
-        <div class="single-sub-item">Category</div>
+        <div class="single-sub-item"><%= sub.category.name %></div>
         <div class="single-sub-item number-letter-spacing"><%= sub.end_date.strftime("%e/%m/%Y") %></div>
         <div class="single-sub-item number-letter-spacing text-right"><%= humanized_money_with_symbol(sub.amount) %></div>
       </div>
