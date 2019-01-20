@@ -114,9 +114,29 @@
   padding: 20px 80px 20px 20px;
   margin: 0 0 30px 30px;
 }
-// .active {
-//   background-color: #A3D5FF;
-//   &:hover{
-//   background-color: #A3D5FF;
-//   }
-// }
+
+/*
+
+general button styling
+
+*/
+.edit-btn, .delete-btn{
+ transition: opacity 0.4s ease;
+
+}
+.delete-btn{
+  color: $red;
+  opacity: 0.5;
+  &:hover{
+    opacity: 1;
+    color: $red;
+  }
+}
+
+.edit-btn{
+  color: $winter-wizard;
+  &:hover{
+    color: $winter-wizard;
+    opacity: 0.5;
+  }
+}

@@ -1,4 +1,10 @@
 <div class="single-sub-show">
+  <%= link_to edit_subscription_path(@subscription), class: " edit-btn edit-show" do  %>
+  <i class="fas fa-edit"></i>
+  <% end %>
+  <%= link_to subscription_path(@subscription), class: "delete-btn delete-show", method: :delete do  %>
+  <i class="fas fa-trash"></i>
+  <% end %>
   <%= link_to "#", remote: true, id: "close-button", class: "text-left" do %>
     <i class="fas fa-times-circle", id="close-button"></i>
   <% end %>
