@@ -7,9 +7,31 @@
     background-color: $off-white;
     font-family: Staatliches;
   }
-  .label-staatliches {
-    font-family: Staatliches;
 
+  .subscription_frequency {
+    legend {
+      font-family: Staatliches;
+    }
+    .flexbox-collection {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .form-check > input {
+      display: none;
+    }
+    .collection_radio_buttons {
+      background-color: #9dabb9;
+      padding: 5px 20px;
+      border-radius: 25px;
+      color: $off-white;
+      transform: 0.3 background-color ease;
+      &:hover {
+        background-color: #708ca9;
+      }
+      &.active {
+        background-color: red !important;
+      }
+    }
   }
 
   .new-sub-form-button {
@@ -17,7 +39,7 @@
     text-align: center;
     color: $off-white;
     background-color: $winter-wizard;
-    font-weight: bold;
+    // font-weight: bold;
     padding: 10px 25px;
     border-radius: 30px;
     &:hover {
@@ -33,7 +55,7 @@
     transform:translateX(500px);
   }
 
-.active-form{
+.active-form {
   width: 300px;
 }
 
