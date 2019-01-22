@@ -16,9 +16,27 @@
   <%= f.association :category, wrapper_html: {class: "col"}, input_html: { class: "input-field" }, prompt: "Category", label: false %>
   <%= f.input :bank_account_id, wrapper_html: {class: "col"}, input_html: { class: "input-field" }, prompt: "Bank Account", label: false, collection: current_user.bank_accounts %>
   </div>
+
+
+
+
   <div class="row">
-    <%= f.input :frequency, wrapper_html: {class: "col"}, input_html: { class: "input-field" }, placeholder: "Frequency", label: false, collection: ['weekly', 'monthly', 'quartely', 'yearly'], as: :radio_buttons  %>
+    <%= f.input :frequency, wrapper_html: {class: "col"},
+        input_html: { class: "input-field-frequency" },
+        label_html: { class: "hello-label" },
+        placeholder: "Frequency",
+        label: false,
+        collection: ['weekly', 'monthly', 'quartely', 'yearly'],
+        collection_wrapper_class: "flexbox-collection",
+        # collection_wrapper_html: {class: "hello-collection-wrapper"},
+        as: :radio_buttons  %>
   </div>
+
+
+
+
+
+
   <div class="row">
   <%= f.input :amount_cents, wrapper_html: {class: "col"}, input_html: { class: "input-field" }, placeholder: "Price", label: false %>
   </div>
@@ -30,4 +48,9 @@
 
 <script>
 flatpickr(".datepicker", {});
+// $(document).ready(function(){
+//   $(".input-field-frequency").click(function(){
+//     $(this).parent(".collection_radio_buttons").addClass("active");
+//   });
+// });
 </script>
