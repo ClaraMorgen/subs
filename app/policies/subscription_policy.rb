@@ -1,7 +1,7 @@
 class SubscriptionPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      scope.all.includes(:category)
     end
   end
 
