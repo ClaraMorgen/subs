@@ -5,14 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>TODO</title>
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=<%= ENV['GOOGLE_TRACKING_ID'] %>"></script>
-  <script>
+  <!--  <script async src="https://www.googletagmanager.com/gtag/js?id=<%# ENV['GOOGLE_TRACKING_ID'] %>"></script> -->
+ <%= javascript_pack_tag 'g_a_site_tag' %>
+  <!-- <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', '<%= ENV['GOOGLE_TRACKING_ID'] %>');
-  </script>
+    gtag('config', '<%# ENV['GOOGLE_TRACKING_ID'] %>');
+  </script> -->
+ <%= javascript_pack_tag 'g_a_other_script' %>
 
   <%= csrf_meta_tags %>
   <%= action_cable_meta_tag %>
