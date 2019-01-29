@@ -8,7 +8,7 @@
 
 
 	u1 = User.create({email: 'bdlb@utexas.edu', first_name: 'Bryan', password: '123456'})
-	u2 = User.create({email: 'clara@gmail.co,', first_name: 'Clara', password: '123456'})
+	u2 = User.create({email: 'clara@gmail.com', first_name: 'Clara', password: '123456'})
 puts "users created"
 
 categories = Category.create(
@@ -50,7 +50,7 @@ reminders = Reminder.create(
 		{date: '2020-05-27', subscription: subscriptions.sample},
 		{date: '2019-04-15', subscription: subscriptions.sample},
 		{date: '2019-10-01', subscription: subscriptions.sample}
-	]	
+	]
 )
 
 puts "seeds created"
