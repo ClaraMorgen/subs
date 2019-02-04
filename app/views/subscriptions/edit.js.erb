@@ -1,0 +1,12 @@
+
+  function refreshForm(innerHTML) {
+  const formContainer = document.getElementById('new-subs');
+  formContainer.innerHTML = innerHTML;
+}
+
+
+<% if @subscription.errors.any? %>
+  refreshForm('<%= j render "subscriptions/form", subscription: @subscription %>');
+<% else %>
+  refreshForm('<%= j render "subscriptions/form", subscription: @subscription %>');
+<% end %>

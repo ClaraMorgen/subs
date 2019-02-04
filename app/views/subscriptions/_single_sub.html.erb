@@ -1,5 +1,5 @@
-<div class="single-sub-show">
-  <%= link_to edit_subscription_path(@subscription), class: " edit-btn edit-show" do  %>
+<div class="single-sub-show" data-sub-id="Sub-<%= @subscription.id %>">
+  <%= link_to edit_subscription_path(@subscription), remote: true, class: " edit-btn edit-show" do  %>
   <i class="fas fa-edit"></i>
   <% end %>
   <%= link_to subscription_path(@subscription), class: "delete-btn delete-show", method: :delete do  %>

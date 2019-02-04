@@ -38,6 +38,34 @@ class SubscriptionsController < ApplicationController
       redirect_to new_subscription_path
     end
   end
+  def edit
+    @subscription = Subscription.find(params[:id])
+    authorize @subscription
+    respond_to do |format|
+      format.html { redirect_to subscriptions_path }
+      format.js # <- will render app/views/subscription/update.js.erb
+    end
+
+  end
+
+  def update
+    @subscription = Subscription.find(params[:id])
+    authorize @subscription
+    @subscription.update(subscription_params)
+    if @subscription.save
+      redirect_to root_path, notice: "You have successfuly updated #{@subscription.title}! "
+    else
+      render :edit, alert: "Please try to fill out the form again."
+    end
+  end
+
+  def destroy
+    @subscription = Subscription.find(params[:id])
+    authorize @subscription
+    @subscription.destroy
+    redirect_to root_path, notice: "You have deleted #{@subscription.title} from your Subs! "
+  end
+
 
   private
 

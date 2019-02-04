@@ -14,10 +14,15 @@ function formToggle(){
   formContainer.style.flex =  `1 0 30%`
   subsList.style.flex = "1 0 70%";
   formContainer.innerHTML = '<%= j render "subscriptions/form", subscription: @subscription %>';
+
   //  First I append the form..
   // Second I listen on the close button once form is displayed
+
   const closeButton = document.getElementById('close-button');
-  closeButton.addEventListener('click', handleClick)
+  closeButton.addEventListener('click', handleClick);
+
+
+
 
   function handleClick(){
     if(formContainer.innerHTML !== "") {

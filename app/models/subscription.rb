@@ -1,9 +1,8 @@
 class Subscription < ApplicationRecord
-
-  belongs_to :category, dependent: :destroy
-  has_many :reminders
-  belongs_to :bank_account, dependent: :destroy
-  belongs_to :user, dependent: :destroy
+  belongs_to :category
+  has_many :reminders, dependent: :destroy
+  belongs_to :bank_account
+  belongs_to :user
 
   validates :title, :amount_cents, presence: true
 
