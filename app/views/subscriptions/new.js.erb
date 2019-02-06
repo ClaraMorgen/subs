@@ -9,23 +9,31 @@ function formToggle(){
   const subs = subsList.querySelectorAll('a[data-remote]');
   subs.forEach(sub => sub.disabled = true);
 
-  subsList.style.flex = "0 1 70%";
-  newSubButton.style.opacity = 0;
-   formContainer.style.transform =  `translateX(0)`
-  buttonContainer.style.transform =  `translateX(400px)`;
+  buttonContainer.style.opacity = 0;
+  setTimeout(() => buttonContainer.style.display = 'none', 50);
+  formContainer.style.flex =  `1 0 30%`
+  subsList.style.flex = "1 0 70%";
   formContainer.innerHTML = '<%= j render "subscriptions/form", subscription: @subscription %>';
+
   //  First I append the form..
   // Second I listen on the close button once form is displayed
+
   const closeButton = document.getElementById('close-button');
-  closeButton.addEventListener('click', handleClick)
+  closeButton.addEventListener('click', handleClick);
+
+
+
 
   function handleClick(){
     if(formContainer.innerHTML !== "") {
       subs.forEach(sub => sub.disabled = false);
-     formContainer.innerHTML = "";
-      buttonContainer.style.transform =  `translateX(0)`;
-       subsList.style.flex = "0 0 100%";
-       newSubButton.style.opacity = 1;
+        formContainer.innerHTML = '';
+       subsList.style.flex = " 1 0 100%";
+        formContainer.style.flex =  `1 0 0`;
+       buttonContainer.height = '';
+      setTimeout(() => buttonContainer.style.display = 'block', 50);
+
+       buttonContainer.style.opacity = 1;
      // formsContainer.classList.remove('new-subs-active')
     }
   }

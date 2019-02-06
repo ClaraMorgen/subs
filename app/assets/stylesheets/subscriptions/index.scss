@@ -8,6 +8,7 @@
   padding: 5px 50px;
     transition: all 0.8s ease;
   .new-sub-button {
+    height: inherit;
     transition: all 0.05s ease;
     background-color: #77BFFC;
     color: $off-white;
@@ -21,14 +22,15 @@
   }
 }
 .top-index{
+    width: 100vw;
     display: flex;
     justify-content: space-between;
 }
 #total-wrapper{
   position: sticky;
   background: $off-white;
-  left: 950px;
-  bottom: 10px;
+  align-self: flex-end;
+  bottom: 45px;
   height: 112px;
   width: 229px;
   border-radius: 30px;
@@ -57,10 +59,12 @@
   display: flex;
   margin-bottom: 10vh;
     .subscriptions {
+      display: flex;
+      flex-direction: column;
     position: relative;
-    flex:0 0 100%;
+    flex: 1 0 100%;
     padding: 0 50px;
-    transition: all 0.3s ease;
+    transition: all 0.6s ease;
     a {
       color: $black;
       text-decoration: none;
@@ -103,7 +107,8 @@
   }
 }
 .form-new, .single-sub-show {
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
+  height: 500px;
   background-color: $off-white;
   border-radius: 30px 0 0 30px;
   border: 1px solid $winter-wizard;
@@ -111,9 +116,29 @@
   padding: 20px 80px 20px 20px;
   margin: 0 0 30px 30px;
 }
-// .active {
-//   background-color: #A3D5FF;
-//   &:hover{
-//   background-color: #A3D5FF;
-//   }
-// }
+
+/*
+
+general button styling
+
+*/
+.edit-btn, .delete-btn{
+ transition: opacity 0.4s ease;
+
+}
+.delete-btn{
+  color: $red;
+  opacity: 0.5;
+  &:hover{
+    opacity: 1;
+    color: $red;
+  }
+}
+
+.edit-btn{
+  color: $winter-wizard;
+  &:hover{
+    color: $winter-wizard;
+    opacity: 0.5;
+  }
+}
