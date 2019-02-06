@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :subscriptions do
     get 'react', on: :collection
   end
+
+  resources :profiles, only: [ :show ]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 namespace :api, defaults: { format: :json } do
      namespace :v1 do
