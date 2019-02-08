@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Button from './styles/Button';
 import Form from './styles/Form';
+import axios from 'axios';
 const FormWrapper = styled.div`
     width: 60%;
     flex-wrap: wrap;
@@ -11,10 +12,21 @@ const FormWrapper = styled.div`
 `;
 
 class DashboardForm extends Component {
+  componentDidMount() {
+    axios
+      .get(`http://localhost:3000/api/v1/${window.location.pathname}`)
+      .then(res => {
+        const firstName = res.data.first_name,
+         id = res.data.id,
+         email = res.data.email;
+        this.setState({firstName, id, email})
+      });
+  };
   state = {
     firstName: '',
     email: '',
     password: '',
+    id: ''
   };
   handleChange = (e) => {
     // I take the target of the form and destructure it to take out
@@ -41,7 +53,7 @@ class DashboardForm extends Component {
                 type="text"
                 id="firstName"
                 name="firstName"
-                placeholder=" Enrique"
+                placeholder={this.state.firstName}
                 value= {this.state.firstName}
                 required/>
             </label>
@@ -52,7 +64,7 @@ class DashboardForm extends Component {
                 type="text"
                 id="email"
                 name="email"
-                placeholder="susie@example.com"
+                placeholder={this.state.email}
                 value= {this.state.email}
                 required/>
             </label>
