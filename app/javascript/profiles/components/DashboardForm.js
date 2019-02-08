@@ -1,33 +1,15 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Button from './styles/Button';
+import Form from './styles/Form';
 const FormWrapper = styled.div`
-    flex-grow: 1.5;
+    width: 60%;
     flex-wrap: wrap;
+    box-shadow: ${props => props.theme.bs};
+    background-color: ${props => props.theme.offWhite};
+
 `;
-const Form = styled.form`
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-  line-height: 1.5;
-  font-weight: 600;
-  button {
-  }
-  label {
-    margin-bottom: 1rem;
-  }
-  input,
-  textarea,
-  select {
-    display: block;
-    padding: 0.5rem;
-    &:focus {
-      outline: 0;
-      border-color: ${props => props.theme.winterWizard};
-    }
-  }
-`;
+
 class DashboardForm extends Component {
   state = {
     firstName: '',

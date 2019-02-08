@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import Button from './styles/Button';
 const Profile = styled.div`
-    flex-grow: 1;
+    height: 25%;
+    box-shadow: ${props => props.theme.bs};
+    background-color: ${props => props.theme.offWhite};
+    margin-bottom: 1rem;
+
 `;
 
 const H1Prof = styled.h1`
@@ -14,16 +17,15 @@ const ParProf = styled.p`
 `;
 
 
-class DashboardProfilePassword extends Component {
+class DashboardProfile extends Component {
   render() {
     return (
       <Profile>
         <H1Prof>Your Profile</H1Prof>
         <ParProf>Please be sure to enter correct information!</ParProf>
-        <Button>Change Password</Button>
       </Profile>
     );
   }
 }
 
-export default DashboardProfilePassword;
+export default DashboardProfile;
