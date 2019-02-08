@@ -1,6 +1,9 @@
 class ProfilesController < ApplicationController
   def show
-    @user = current_user
+    @user = User.find(params[:id])
     authorize([:profile, @user])
+  end
+
+  def update
   end
 end

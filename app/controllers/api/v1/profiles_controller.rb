@@ -1,7 +1,7 @@
 class Api::V1::ProfilesController < Api::V1::BaseController
 
   def show
-    @user = current_user
+    @user = User.find(params[:id])
     authorize([:profile, @user])
   end
 

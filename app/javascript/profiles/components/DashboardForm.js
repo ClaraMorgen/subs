@@ -14,7 +14,7 @@ const FormWrapper = styled.div`
 class DashboardForm extends Component {
   componentDidMount() {
     axios
-      .get(`http://localhost:3000/api/v1/${window.location.pathname}`)
+      .get(`/api/v1/${window.location.pathname}`)
       .then(res => {
         const firstName = res.data.first_name,
          id = res.data.id,
@@ -25,7 +25,6 @@ class DashboardForm extends Component {
   state = {
     firstName: '',
     email: '',
-    password: '',
     id: ''
   };
   handleChange = (e) => {
@@ -40,11 +39,21 @@ class DashboardForm extends Component {
   render() {
     return (
       <FormWrapper>
-        <Form onSubmit={ e => {
+        <Form onSubmit={  e => {
           e.preventDefault();
-          console.log(this.state);
+          axios
+            .put(`http://localhost:3000/api/v1/${window.location.pathname}`, {
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              method: 'POST',
+              credentials: 'same-origin',
+              body: JSON.stringify({user: {...this.state}})
+            })
+            .then(res => console.log(res))
+            .catch(err => console.log(err));
 
-        }
+       } // }
         }>
             <label htmlFor="firstName">
               First Name

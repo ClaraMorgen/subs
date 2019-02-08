@@ -6,7 +6,6 @@ Rails.application.routes.draw do
     get 'react', on: :collection
   end
 
-  resources :profiles, only: [ :show ]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 namespace :api, defaults: { format: :json } do
      namespace :v1 do
@@ -14,4 +13,5 @@ namespace :api, defaults: { format: :json } do
       resources :subscriptions, only: [ :index, :create ]
     end
   end
+resources :profiles, only: [ :show, :update ]
 end
