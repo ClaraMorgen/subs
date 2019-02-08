@@ -12,6 +12,12 @@ const FormWrapper = styled.div`
 `;
 
 class DashboardForm extends Component {
+  state = {
+    firstName: '',
+    email: '',
+    id: '',
+  };
+
   componentDidMount() {
     axios
       .get(`/api/v1/${window.location.pathname}`)
@@ -22,11 +28,6 @@ class DashboardForm extends Component {
         this.setState({firstName, id, email})
       });
   };
-  state = {
-    firstName: '',
-    email: '',
-    id: ''
-  };
   handleChange = (e) => {
     // I take the target of the form and destructure it to take out
     // name, type and value (console.log e.target to see what's going on :) )
@@ -36,11 +37,22 @@ class DashboardForm extends Component {
     // so if firstName = name of inout then.. firstName: value.. email: value
     this.setState({ [name]: value })
   }
+
+  formatParams = (params) => {
+    // format params to be valid for rails
+    const newParams = {};
+    Object.keys(params).forEach(key => {
+      let newkey = key.split(/(?=[A-Z])/).join('_').toLowerCase();
+      Object.assign(newParams, {[newkey]: params[key] })[key];
+    });
+    return newParams;
+  }
   render() {
     return (
       <FormWrapper>
         <Form onSubmit={  e => {
           e.preventDefault();
+            const user = this.formatParams({...this.state})
           axios
             .put(`http://localhost:3000/api/v1/${window.location.pathname}`, {
               headers: {
@@ -48,7 +60,7 @@ class DashboardForm extends Component {
               },
               method: 'POST',
               credentials: 'same-origin',
-              body: JSON.stringify({user: {...this.state}})
+              user: user
             })
             .then(res => console.log(res))
             .catch(err => console.log(err));
