@@ -1,4 +1,4 @@
-class Api::V1::SubscriptionsController < ActionController::Base
+class Api::V1::SubscriptionsController <  Api::V1::BaseController
 	def index
 		@subscriptions = Subscription.includes(:bank_account).map do |sub|
       end_date = sub.end_date.strftime("%e/%m/%Y").strip
