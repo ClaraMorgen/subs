@@ -52,7 +52,7 @@ class DashboardForm extends Component {
       <FormWrapper>
         <Form onSubmit={  e => {
           e.preventDefault();
-            const user = this.formatParams({...this.state})
+          const user = this.formatParams({...this.state})
           axios
             .put(`http://localhost:3000/api/v1/${window.location.pathname}`, {
               headers: {
@@ -65,31 +65,31 @@ class DashboardForm extends Component {
             .then(res => console.log(res))
             .catch(err => console.log(err));
 
-       } // }
+          }
         }>
-            <label htmlFor="firstName">
-              First Name
-              <input
-                onChange={this.handleChange}
-                type="text"
-                id="firstName"
-                name="firstName"
-                placeholder={this.state.firstName}
-                value= {this.state.firstName}
-                required/>
-            </label>
-            <label htmlFor="email">
-              Email
-              <input
-                onChange={this.handleChange}
-                type="text"
-                id="email"
-                name="email"
-                placeholder={this.state.email}
-                value= {this.state.email}
-                required/>
-            </label>
-            <Button type="submit">Submit</Button>
+          <label htmlFor="firstName">
+            First Name
+            <input
+              onChange={this.handleChange}
+              type="text"
+              id="firstName"
+              name="firstName"
+              placeholder={this.state.firstName}
+              value= {this.state.firstName}
+              required/>
+          </label>
+          <label htmlFor="email">
+            Email
+            <input
+              onChange={this.handleChange}
+              type="text"
+              id="email"
+              name="email"
+              placeholder={this.state.email}
+              value= {this.state.email}
+              required/>
+          </label>
+          <Button type="submit">Submit</Button>
         </Form>
       </FormWrapper>
     );
