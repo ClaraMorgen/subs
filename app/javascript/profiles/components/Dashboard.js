@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import DashboardProfile  from './DashboardProfile';
 import DashboardBottom  from './DashboardBottom';
-
+import Alert from '../../modules/Flashes/Alert';
 const DashboardWrapper = styled.div`
   max-width: ${props => props.theme.maxWidth};
   height: 80vh;
@@ -15,6 +15,7 @@ class Dashboard extends Component {
   render() {
     return (
       <DashboardWrapper>
+          <Alert />
           <DashboardProfile />
           <DashboardBottom />
       </DashboardWrapper>

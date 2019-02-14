@@ -12,12 +12,23 @@ const FormWrapper = styled.div`
 `;
 
 class DashboardForm extends Component {
-  state = {
-    firstName: '',
-    email: '',
-    id: '',
-  };
 
+    state = {
+      firstName: '',
+      email: '',
+      id: '',
+      message: {
+        id: '',
+        type: '',
+        text: '',
+      },
+    };
+
+  componentDidUpdate(prevProps, prevState) {
+      if(this.state.message.id !== prevState.message.id){
+        return <Alert message={this.state.message} />
+      }
+  }
   componentDidMount() {
     axios
       .get(`/api/v1/${window.location.pathname}`)
@@ -48,6 +59,8 @@ class DashboardForm extends Component {
     return newParams;
   }
   render() {
+    const messageSuccess = {id: 1, text: "User updated successfully", type: "success"}
+    const messageError = {id: 1, text: "User could not be updated.", type: "alert"}
     return (
       <FormWrapper>
         <Form onSubmit={  e => {
@@ -62,7 +75,9 @@ class DashboardForm extends Component {
               credentials: 'same-origin',
               user: user
             })
-            .then(res => console.log(res))
+            .then(res =>{
+              this.setState({message: messageSuccess})
+            })
             .catch(err => console.log(err));
 
           }
