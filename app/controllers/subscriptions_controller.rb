@@ -3,6 +3,8 @@ class SubscriptionsController < ApplicationController
 
     if params["filter-title"].present?
       @subscriptions = policy_scope(Subscription).where(title: params["filter-title"])
+    elsif params["filter-category"].present?
+      @subscriptions = policy_scope(Subscription).where(title: "Cedit Card Bill")
     else
 		  @subscriptions = policy_scope(Subscription)
     end

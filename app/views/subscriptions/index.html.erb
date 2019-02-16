@@ -3,12 +3,13 @@
     <%= form_tag subscriptions_path, data: { remote: true }, id: "filter-form", method: :get do %>
     <label class="filter-choice <%# "active" if checked %>" for="filter-title" >
       Title
-    <input <%# 'checked' if checked %> type="" class="hidden" value="" name="filter-title" id="filter-title" >
+      <input <%# 'checked' if checked %> type="" class="hidden" value="" name="filter-title" id="filter-title" >
     </label>
-    <label class="filter-choice <%# "active" if checked %>" for="filter-category" >
-    <input <%# 'checked' if checked %> type="" class="hidden" value="" name="filter-category" id="" >
+   <!--  <label class="filter-choice <%# "active" if checked %>" for="filter-category" >
+    <input <%# 'checked' if checked %> type="" class="hidden" value="" name="filter-category-[<%=  %>]" id="" >
       Category
-    </label>
+    </label> -->
+    <%= select_tag "filter-category", options_from_collection_for_select(current_user.categories, "name", "name") %>
     <%= submit_tag "Filter", class: "hidden", id: "submit-filter" %>
     <% end %>
   </div>
