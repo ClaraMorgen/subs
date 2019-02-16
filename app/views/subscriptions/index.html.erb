@@ -1,38 +1,26 @@
 <div class="top-index">
   <div class="filterbar">
-    <h1>
-    Filterbar
-    </h1>
+    <%= form_tag subscriptions_path, data: { remote: true }, id: "filter-form", method: :get do %>
+    <label class="filter-choice <%# "active" if checked %>" for="filter-title" >
+      Title
+    <input <%# 'checked' if checked %> type="" class="hidden" value="" name="filter-title" id="filter-title" >
+    </label>
+    <label class="filter-choice <%# "active" if checked %>" for="filter-category" >
+    <input <%# 'checked' if checked %> type="" class="hidden" value="" name="filter-category" id="" >
+      Category
+    </label>
+    <%= submit_tag "Filter", class: "hidden", id: "submit-filter" %>
+    <% end %>
   </div>
   <div class="new-sub-section">
     <%= link_to "Add new sub!", new_subscription_path(@subscription), remote: true, class: "new-sub-button", id: "new-sub-button" %>
   </div>
 </div>
 
-
-<div class="subs-part">
-
-  <div class="subscriptions" id="subs-list">
-    <% @subscriptions.each do |sub| %>
-      <%= link_to subscription_path(sub.id), remote: true do %>
-      <div class="single-sub ">
-        <h4 class="sub-title"><%= sub.title %> </h4>
-        <div class="single-sub-item"><%= sub.category.name %></div>
-        <div class="single-sub-item number-letter-spacing"><%= sub.end_date.strftime("%e/%m/%Y") %></div>
-        <div class="single-sub-item number-letter-spacing text-right"><%= humanized_money_with_symbol(sub.amount) %></div>
-      </div>
-      <% end %>
-    <% end %>
-    <div id="total-wrapper">
-      <div class="total-upper">
-        <h3 class="total-title">Total</h3>
-        <h3 class="total-amount"><%= humanized_money_with_symbol(@total) %></h3>
-      </div>
-      <div class="total-lower">
-        <p class="total-subs-counter"><%= @subscriptions.size %> Subscriptions</p>
-      </div>
-    </div>
-  </div>
-  <div id="new-subs" class="single-sub-container"></div>
+<div id="subs-part">
+  <%= render 'subs_list', subscriptions: @subscriptions %>
 </div>
 
+<%= content_for(:after_js) do %>
+  <%= javascript_pack_tag 'index_filter' %>
+<% end %>

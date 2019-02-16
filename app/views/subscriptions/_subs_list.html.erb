@@ -1,0 +1,24 @@
+
+  <div class="subscriptions" id="subs-list">
+    <% subscriptions.each do |sub| %>
+      <%= link_to subscription_path(sub.id), remote: true do %>
+      <div class="single-sub ">
+        <h4 class="sub-title"><%= sub.title %> </h4>
+        <div class="single-sub-item"><%= sub.category.name %></div>
+        <div class="single-sub-item number-letter-spacing"><%= sub.end_date.strftime("%e/%m/%Y") %></div>
+        <div class="single-sub-item number-letter-spacing text-right"><%= humanized_money_with_symbol(sub.amount) %></div>
+      </div>
+      <% end %>
+    <% end %>
+    <div id="total-wrapper">
+      <div class="total-upper">
+        <h3 class="total-title">Total</h3>
+        <h3 class="total-amount"><%= humanized_money_with_symbol(@total) %></h3>
+      </div>
+      <div class="total-lower">
+        <p class="total-subs-counter"><%= @subscriptions.size %> Subscriptions</p>
+      </div>
+    </div>
+  </div>
+  <div id="new-subs" class="single-sub-container"></div>
+

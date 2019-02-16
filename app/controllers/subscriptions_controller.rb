@@ -1,10 +1,16 @@
 class SubscriptionsController < ApplicationController
 	def index
-		@subscriptions = policy_scope(Subscription)
+
+    if params["filter-title"].present?
+      @subscriptions = policy_scope(Subscription).where(title: params["filter-title"])
+    else
+		  @subscriptions = policy_scope(Subscription)
+    end
+
     @total = @subscriptions.sum(&:amount)
     respond_to do |format|
       format.html
-      format.js  # <-- will render `app/views/subscription/new.js.erb`
+      format.js
     end
   end
 
