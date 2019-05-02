@@ -1,0 +1,6 @@
+<div class="profile-wrapper" data-messages="<%= !flash.empty? ? flash : "" %>"></div>
+
+<%   raise if !flash.empty?   %>
+<%= content_for(:after_js)  do %>
+  <%= javascript_pack_tag 'Profile' %>
+<% end %>

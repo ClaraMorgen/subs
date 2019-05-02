@@ -25,10 +25,13 @@
   <div class="wrapper">
     <div class="header-container">
       <p class="greeting">Hello
-        <% if current_user %>
-        <%= current_user.first_name %></p >
+      <% if current_user %>
+          <%= link_to profile_path(current_user) do %>
+            <mark class="home-under"><%= current_user.first_name %></mark>
+          <% end %>
         <p><%= link_to "Sign out", destroy_user_session_path, method: :delete %></p>
-        <% end %>
+      <% end %>
+      </p >
         <!-- <div class="dropdown"> -->
         <!--             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         </a> -->
